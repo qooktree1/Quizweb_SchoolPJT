@@ -1,0 +1,174 @@
+<?
+setcookie("count_1", "");
+setcookie("count_2", "");
+setcookie("count_3", "");
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>퀴즈</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">Q<span>uiz</span></a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">QUIZ</a>
+                            <div class="dropdown-menu">
+                                <a href="quiz1.html" class="dropdown-item">상식</a>
+                                <a href="quiz2.html" class="dropdown-item">넌센스</a>
+                                <a href="quiz3.html" class="dropdown-item">사자성어</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">RANK</a>
+                            <div class="dropdown-menu">
+                                <a href="rank1.php" class="dropdown-item">상식</a>
+                                <a href="rank2.php" class="dropdown-item">넌센스</a>
+                                <a href="rank3.php" class="dropdown-item">사자성어</a>
+                            </div>
+                        </div>
+                        
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <?
+                            if(isset($_COOKIE['userid'])){
+                                echo ("<a href='logout.php' class='nav-item nav-link'>Logout</a>");
+                            }
+                            else{
+                                echo ("<a href='login.html' class='nav-item nav-link'>Login</a>");
+                            }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="col-12">
+                <h2>Login or Register</h2>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Contact Start -->
+        <div class="contact">
+            <div class="container">
+                <div class="section-header text-center wow zoomIn">
+                    <h2>Login</h2>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        
+                    </div>
+                    <div class="col-12 wow fadeInUp">
+                        <div class="contact-form">
+                            <div id="success"></div>
+
+
+                            <form name="LOGIN" action="login.php" method="post">
+                                <div class="control-group">
+                                    <input type="text" class="form-control" name="user_id" placeholder="아이디를 입력하세요" required="required" data-validation-required-message="Please enter your name" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <input type="password" class="form-control" name="password" placeholder="비밀번호를 입력하세요" required="required" data-validation-required-message="Please enter your email" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div>
+                                    <button class="btn" type="submit" id="sendMessageButton">Login</button>
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+        <!-- Contact Start -->
+        <div class="contact">
+            <div class="container">
+                <div class="section-header text-center wow zoomIn">
+                    <h2>Register</h2>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        
+                    </div>
+                    <div class="col-12 wow fadeInUp">
+                        <div class="contact-form">
+                            <div id="success"></div>
+                            <form name="REGISTER" action="register.php" method="post">
+                                <div class="control-group">
+                                    <input type="text" class="form-control" name="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <input type="text" class="form-control" name="phone_number" placeholder="전화번호" required="required" data-validation-required-message="Please enter your email" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <input type="text" class="form-control" name="user_id" placeholder="아이디를 입력하세요" required="required" data-validation-required-message="Please enter your name" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <input type="password" class="form-control" name="password" placeholder="비밀번호를 입력하세요" required="required" data-validation-required-message="비밀번호" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div>
+                                    <button class="btn" type="submit" id="sendMessageButton">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="footer-info">
+                <a href="index.html" class="footer-logo">Q<span>uiz</span></a>
+                <h3>고려대학교 컴퓨터정보학과</h3>
+                <div class="footer-menu">
+                    <p>2016270258 임경민</p>
+                    <p>2016270259 박종민</p>
+                </div>
+            </div>
+    </div>
+<!-- Footer End -->
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

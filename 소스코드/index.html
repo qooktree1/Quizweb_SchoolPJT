@@ -1,0 +1,189 @@
+<?
+setcookie("count_1", "");
+setcookie("count_2", "");
+setcookie("count_3", "");
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>퀴즈</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">Q<span>uiz</span></a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="nav-hover" data-toggle="dropdown">QUIZ</a> <!-- 부트스트랩-->
+                            <div class="dropdown-menu">
+                                <a href="quiz1.html" class="dropdown-item">상식</a>
+                                <a href="quiz2.html" class="dropdown-item">넌센스</a>
+                                <a href="quiz3.html" class="dropdown-item">사자성어</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">RANK</a>
+                            <div class="dropdown-menu">
+                                <a href="rank1.php" class="dropdown-item">상식</a>
+                                <a href="rank2.php" class="dropdown-item">넌센스</a>
+                                <a href="rank3.php" class="dropdown-item">사자성어</a>
+                            </div>
+                        </div>
+                        
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <?
+                            if(isset($_COOKIE['userid'])){
+                                echo ("<a href='logout.php' class='nav-item nav-link'>Logout</a>");
+                            }
+                            else{
+                                echo ("<a href='login.html' class='nav-item nav-link'>Login</a>");
+                            }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+
+        <!-- 상식퀴즈 -->
+        <div class="hero">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="hero-text">
+                            <h1>상식 퀴즈</h1>
+                            <p>여러분의 상식을 체크해보세요!<br>여러 종류의 카테고리들이 준비되어있습니다.</p>
+                            <div class="hero-btn">
+                                <a class="btn" href="quiz1.html">상식퀴즈 바로가기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 d-none d-md-block">
+                        <div class="hero-image">
+                            <img src="img/ca1.png" alt="Hero Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 상식퀴즈 -->
+
+
+        <!-- 넌센스 퀴즈 -->
+        <div class="hero">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="hero-text">
+                            <h1>넌센스 퀴즈</h1>
+                            <p>여러분의 센스를 체크해보세요!<br>상상력을 발휘하여 풀어보세요.</p>
+                            <div class="hero-btn">
+                                <a class="btn" href="quiz2.html">넌센스 바로가기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 d-none d-md-block">
+                        <div class="hero-image">
+                            <img src="img/ca2.png" alt="Hero Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 넌센스 퀴즈 -->
+
+        <!-- Hero Start -->
+        <div class="hero">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="hero-text">
+                            <h1>사자성어</h1>
+                            <p>여러분의 사자성어 실력을 체크해보세요!<br>알고 있으면 좋은 사자성어들이 준비되어있습니다.</p>
+                            <div class="hero-btn">
+                                <a class="btn" href="quiz3.html">사자성어 바로가기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 d-none d-md-block">
+                        <div class="hero-image">
+                            <img src="img/ca3.png" alt="Hero Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+
+
+        <!-- Service Start -->
+        <div class="service">
+            <div class="container">
+                <div class="section-header text-center wow zoomIn">
+                    <h2>순위표</h2> <!-- 순위표-->
+                </div>
+                <div class="row" >
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" onclick="location.href='rank1.php'" style="cursor:pointer">
+                        <div class="service-item">
+                            
+                                <img src="img/boo1.png">
+                                <h3>Common sense</h3>
+
+                            </div>
+                        
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" onclick="location.href='rank2.php'" style="cursor:pointer">
+                        <div class="service-item">
+                            <img src="img/boo2.png">
+                            <h3><br>Non-Sense</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" onclick="location.href='rank3.php'" style="cursor:pointer">
+                        <div class="service-item"> 
+                            <img src="img/boo3.png">
+                            <h3><br>Four Character Idiom</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+
+
+        <!-- Footer Start -->
+            <div class="footer">
+                    <div class="footer-info">
+                        <a href="index.html" class="footer-logo">Q<span>uiz</span></a>
+                        <h3>고려대학교 컴퓨터정보학과</h3>
+                        <div class="footer-menu">
+                            <p>2016270258 임경민</p>
+                            <p>2016270259 박종민</p>
+                        </div>
+                    </div>
+            </div>
+        <!-- Footer End -->
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
